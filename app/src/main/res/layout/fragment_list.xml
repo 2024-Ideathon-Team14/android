@@ -9,7 +9,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -20,31 +21,34 @@
                 android:id="@+id/title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CARE ZOOM"
-                android:textStyle="bold"
-                android:textAppearance="@font/pretendard_bold"
+                android:text="내 주변 돌봄 요청"
                 android:textSize="24sp"
-                android:textColor="@color/dark_gray"
-                android:elevation="8dp"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/paw_iv"
-                app:layout_constraintBottom_toBottomOf="@id/paw_iv"/>
+                />
 
             <ImageView
-                android:id="@+id/paw_iv"
-                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/iv"
                 app:layout_constraintStart_toEndOf="@id/title_tv"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_paw_print"/>
+                app:layout_constraintTop_toTopOf="@id/title_tv"
+                app:layout_constraintBottom_toBottomOf="@id/title_tv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_paws"/>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                tools:listitem="@layout/item_care_list"
-                app:layout_constraintTop_toBottomOf="@id/paw_iv"/>
+                android:overScrollMode="never"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/iv"
+                android:paddingBottom="100dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

@@ -4,21 +4,239 @@
 
     <data>
 
+        <variable
+            name="view"
+            type="techeer.carezoom.presentation.DetailFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->view.onBackPressed()}"
+                android:src="@drawable/ic_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="돌봄 요청 상세 정보"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/back_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_paws"
+                app:layout_constraintBottom_toBottomOf="@id/title_tv"
+                app:layout_constraintStart_toEndOf="@id/title_tv"
+                app:layout_constraintTop_toTopOf="@id/title_tv" />
+
+            <TextView
+                android:id="@+id/nickname_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="작성자"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_tv" />
+
+            <TextView
+                android:id="@+id/address_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="요청 주소"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/title_tv"
+                app:layout_constraintTop_toBottomOf="@id/nickname_title_tv" />
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/address_title_tv"
+                app:layout_constraintStart_toEndOf="@id/address_title_tv" />
+
+            <TextView
+                android:id="@+id/nickname_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="돌봐줌"
+                app:layout_constraintBaseline_toBaselineOf="@id/nickname_title_tv"
+                app:layout_constraintStart_toEndOf="@id/nickname_title_tv" />
+
+            <TextView
+                android:id="@+id/write_date_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="일시"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/title_tv"
+                app:layout_constraintTop_toBottomOf="@id/address_title_tv" />
+
+            <TextView
+                android:id="@+id/write_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="2024.06.01"
+                app:layout_constraintBaseline_toBaselineOf="@id/write_date_title_tv"
+                app:layout_constraintStart_toEndOf="@id/write_date_title_tv" />
+
+            <TextView
+                android:id="@+id/date_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="작성 일시"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/write_date_title_tv"
+                app:layout_constraintStart_toEndOf="@id/write_date_tv" />
+
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="2024.06.01"
+                app:layout_constraintBaseline_toBaselineOf="@id/date_title_tv"
+                app:layout_constraintStart_toEndOf="@id/date_title_tv" />
+
+            <TextView
+                android:id="@+id/category_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="카테고리"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/title_tv"
+                app:layout_constraintTop_toBottomOf="@id/write_date_title_tv" />
+
+            <TextView
+                android:id="@+id/category_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="산책하기"
+                app:layout_constraintBaseline_toBaselineOf="@id/category_title_tv"
+                app:layout_constraintStart_toEndOf="@id/category_title_tv" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray20"
+                app:layout_constraintTop_toBottomOf="@id/category_title_tv" />
+
+            <TextView
+                android:id="@+id/pet_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="반려동물 정보"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/title_tv"
+                app:layout_constraintTop_toBottomOf="@id/line1" />
+
+            <TextView
+                android:id="@+id/pet_name_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="이름"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/title_tv"
+                app:layout_constraintTop_toBottomOf="@id/pet_title_tv" />
+
+            <TextView
+                android:id="@+id/pet_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text=""
+                app:layout_constraintBaseline_toBaselineOf="@id/pet_name_title_tv"
+                app:layout_constraintStart_toEndOf="@id/pet_name_title_tv" />
+
+            <TextView
+                android:id="@+id/pet_age_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="나이"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pet_name_title_tv" />
+
+            <TextView
+                android:id="@+id/pet_age_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text=""
+                app:layout_constraintBaseline_toBaselineOf="@id/pet_age_title_tv"
+                app:layout_constraintStart_toEndOf="@id/pet_age_title_tv" />
+
+            <TextView
+                android:id="@+id/pet_category_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="동물 분류"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pet_age_title_tv" />
+
+            <TextView
+                android:id="@+id/pet_category_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text=""
+                app:layout_constraintBaseline_toBaselineOf="@id/pet_category_title_tv"
+                app:layout_constraintStart_toEndOf="@id/pet_category_title_tv" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray20"
+                app:layout_constraintTop_toBottomOf="@id/pet_category_title_tv" />
+
+
+            <TextView
+                android:id="@+id/body_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/title_tv"
+                app:layout_constraintTop_toBottomOf="@id/line2"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </layout>

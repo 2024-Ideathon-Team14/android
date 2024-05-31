@@ -25,6 +25,10 @@
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true">
+        </activity>
+        <activity android:name="techeer.carezoom.presentation.WriteActivity" />
+        <activity android:name="techeer.carezoom.presentation.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

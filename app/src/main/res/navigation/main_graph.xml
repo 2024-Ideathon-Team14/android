@@ -18,7 +18,7 @@
         android:label="DetailFragment" >
 
         <argument
-            android:name="postId"
-            app:argType="long" />
+            android:name="care"
+            app:argType="techeer.carezoom.data.CareList" />
     </fragment>
 </navigation>

@@ -16,4 +16,16 @@
         <item name="fontFamily">@font/pretendard_regular</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
+    <style name="Widget.App.TextInputLayout.corner10" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextAppearance">@style/font_pretendard_bold</item>
+        <item name="errorTextColor">@color/pink</item>
+    </style>
 </resources>

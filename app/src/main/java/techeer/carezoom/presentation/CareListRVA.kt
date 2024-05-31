@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.naver.maps.geometry.LatLng
 import techeer.carezoom.data.CareList
 import techeer.carezoom.databinding.ItemCareListBinding
 
@@ -19,11 +20,22 @@ class CareListRVA : ListAdapter<CareList, CareListRVA.CareListViewHolder>(object
     }
 
 }) {
+    private var rvaClickListener: RVAClickListener? = null
+    fun setRVAClickListener(listener: RVAClickListener){
+        this.rvaClickListener = listener
+    }
     inner class CareListViewHolder(private val binding: ItemCareListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(careList: CareList) {
             with(binding){
                 model = careList
+                categoryTv.text = careList.category
+                infoViewBtn.setOnClickListener {
+                    rvaClickListener?.onDetailView(careList)
+                }
+                mapViewBtn.setOnClickListener {
+                    rvaClickListener?.onMapView(careList.latLng)
+                }
             }
         }
     }
@@ -42,5 +54,9 @@ class CareListRVA : ListAdapter<CareList, CareListRVA.CareListViewHolder>(object
         holder.bind(currentList[position])
     }
 
+    interface RVAClickListener{
+        fun onDetailView(care: CareList)
+        fun onMapView(coord: LatLng)
+    }
 
 }

@@ -9,8 +9,10 @@ import android.os.Build
 import androidx.annotation.StringRes
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import dagger.hilt.android.HiltAndroidApp
 import techeer.carezoom.util.NetworkConnectionChecker
 
+@HiltAndroidApp
 class CareZoomApplication: Application(), DefaultLifecycleObserver {
     override fun onCreate() {
         super<Application>.onCreate()
