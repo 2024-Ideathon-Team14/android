@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray20">#F0F0F0</color>
+    <color name="gray40">#CACACA</color>
+    <color name="gray_bg">#F2F5FA</color>
+    <color name="dark_gray">#656565</color>
+    <color name="dark_gray40">#282828</color>
+    <color name="dark_gray20">#616161</color>
+    <color name="pink">#FC6F6F</color>
+    <color name="gray_arrow">#5F5F5F</color>
+</resources>

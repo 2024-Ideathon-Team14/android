@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="font_pretendard_bold">
+        <item name="fontFamily">@font/pretendard_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="font_pretendard_semi_medium">
+        <item name="fontFamily">@font/pretendard_semi_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="font_pretendard_medium">
+        <item name="fontFamily">@font/pretendard_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="font_pretendard_regular">
+        <item name="fontFamily">@font/pretendard_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
